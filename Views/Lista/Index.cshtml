@@ -1,0 +1,34 @@
+﻿@model ZakupClass
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+<div>
+    <h1>Tworzenia zakupu</h1>
+    <p> </p>
+    <form asp-controller="Lista" asp-action="Index" method="post">
+        <div>
+            <label for="Nazwa">Nazwa:</label>
+            <input type="text" asp-for="Nazwa" class="form-control" />
+            <span asp-validation-for="Nazwa" class="text-danger"></span>
+        </div>
+        <div>
+            <label for="Liczba">Liczba:</label>
+            <input type="text" asp-for="Liczba" class="form-control" />
+            <span asp-validation-for="Liczba" class="text-danger"></span>
+        </div>
+        <div>
+            <label for="Cena">Cena jednostkowa:</label>
+            <input type="text" asp-for="Cena" class="form-control" />
+            <span asp-validation-for="Cena" class="text-danger"></span>
+        </div>
+        <button class="btn btn-warning" type="submit" asp-controller="Lista" asp-action="Lista">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    int n = 0;
+    double sumacena = 0;
+    foreach (var item in Model)
+    {
+        sumacena = sumacena + item.SumaTowaru();
+    }
+}
+
+
+<div>
+    <h1>Lista zakupów:</h1>
+    <p></p>
+    @foreach (var item in Model)
+    {
+        n++;
+        <h3>Towar @n</h3>
+        <p>Nazwa: @item.Nazwa</p>
+        <p>Liczba: @item.Liczba</p>
+        <p>Cena jednostkowa: @item.Cena</p>
+    }
+    <h4>Cena za wszystkie zakupy: @sumacena</h4>
+    <p></p>
+    <p><a class="btn btn-warning" asp-controller="Lista" asp-action="Index">Back</a></p>
+</div>
